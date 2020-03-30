@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        .headline {
+            text-align: center;
+        }
+
+        button {
+            height: 25px;
+            width: 109px;
+            margin: -20px -50px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+        }
+
+        /* main{
+            background-image: url("./screen.png");
+            background-size: 900px 300px;
+        } */
+    </style>
+
+</head>
+
+<body>
+    <main>
+        <header class='headline'>
+            <h1 class='title'>This quiz is designed to test your knowledge of JavaScript</h1>
+            <h3>JavaScript Rock</h3>
+        </header>
+        <button class='start'>Lets Go!</button>
+        <div class = "time"></div>
+        <section>
+            <div class="questions">
+                <div class="question1"></div>
+                <div class="question2"></div>
+                <div class="question3"></div>
+                <div class="question4"></div>
+                <div class="question5"></div>
+
+            </div>
+            <ul class="answers">
+            </ul>
+        </section>
+    </main>
+    <script>
+        $(document).ready(function () {
+            var $time = $(".time");
+            var $startQuiz = $(".start");
+            var $questions = $(".questions");
+            var $answers = $(".answers");
+
+            const QUESTIONS = [
+                {
+                    "question": 'WHy is Andreaaa stupid',
+                    answers: ['Because she id stupid', 'she is not stupid', 'because she is ', 'who cares'],
+                    correctAnswer: 'wueiw'
+                },
+
+                {
+                    "question": 'why?',
+                    answers: ['Oakland', 'Patriots', 'Kanas City', 'Da Bears'],
+                    correctAnswer: 'eerreedv'
+                },
+                {
+                    "question": 'who?',
+                    answers: ['Oakland', 'Patriots', 'Kanas City', 'Da Bears'],
+                    correctAnswer: ' City'
+                },
+                {
+                    "question": 'yakke?',
+                    answers: ['Oakland', 'Patriots', 'Kanas City', 'Da Bears'],
+                    correctAnswer: 'Kanas '
+                },
+                {
+                    "question": 'dfdjfkd',
+                    answers: ['Because she id stupid', 'she is not stupid', 'because she is ', 'who cares'],
+                    correctAnswer: 'fdhds City'
+                }
+
+            ];
+            // console.log(QUESTIONS[0]["answers"][0]);
+
+            $startQuiz.on("click", function () {
+
+                
+
+                var questionsLength = QUESTIONS.length;
+                console.log(questionsLength);
+
+                for (var i = 0; i < questionsLength; i++) {
+
+                    var question = (QUESTIONS[i]["question"]);
+                    console.log(question);
+                    $questions.append('<div>'+ question+"</div>");
+                    
+                    var correctAnswer = (QUESTIONS[i].correctAnswer);
+                    // console.log(correctAnswer);
+                    // $answers.append('<input type="checkbox" /> ' + correctAnswer + '<br />');
+
+
+                }
+
+                function shwoAnswer(){
+                    var answersLength = (QUESTIONS[i].answers).length;
+                    for( var j = 0; j < answersLength; j++){
+                        var answers = (QUESTIONS[i].answers[j]);
+                        console.log(answers);
+                        $answers.append('<input type="checkbox" /> ' + answers + '<br />');
+
+                    }
+                    
+
+                }
+
+
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>
