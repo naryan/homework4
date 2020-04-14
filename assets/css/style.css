@@ -1,0 +1,38 @@
+#head {
+  margin-bottom: 3px;
+  text-align: center;
+  padding: 40px;
+  background-color: cornsilk;
+  border: 2px solid black;
+}
+
+#body{
+  margin-top: 30px;
+  background-color: aqua;
+  border: 2px solid black;
+  padding: 30px;
+  display: none;
+}
+.start {
+  padding: 20px;
+  box-shadow: blue;
+  margin: 50px;
+  height: 25px;
+  width: 109px;
+  margin-left: -50px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+
+}
+button{
+  margin-top: 30px;
+}
+
+.footer{
+  
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+

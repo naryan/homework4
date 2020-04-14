@@ -2,129 +2,60 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <style>
-        .headline {
-            text-align: center;
-        }
-
-        button {
-            height: 25px;
-            width: 109px;
-            margin: -20px -50px;
-            position: relative;
-            top: 50%;
-            left: 50%;
-        }
-
-        /* main{
-            background-image: url("./screen.png");
-            background-size: 900px 300px;
-        } */
-    </style>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <title>Code Quiz</title>
 </head>
-
 <body>
-    <main>
-        <header class='headline'>
-            <h1 class='title'>This quiz is designed to test your knowledge of JavaScript</h1>
-            <h3>JavaScript Rock</h3>
+    <main class = "container">
+        <header class='headline' id = "head">
+            <h1 class='title'>This quiz is designed to test your knowledge of Soccer</h1>
+            <h3>Football Rock</h3>
         </header>
         <button class='start'>Lets Go!</button>
-        <div class = "time"></div>
-        <section>
-            <div class="questions">
-                <div class="question1"></div>
-                <div class="question2"></div>
-                <div class="question3"></div>
-                <div class="question4"></div>
-                <div class="question5"></div>
-
-            </div>
-            <ul class="answers">
-            </ul>
-        </section>
+        <div class = "container" id = "body">
+            <div id="time" class="float-right mr-2">Time:0</div>
+            <div id="score" class ="float-left mr-2">Score:0</div>
+            <section class ="main-screen-container">
+                <div class="questions"></div>
+                <div class="answers"></div>
+            </section>
+            <div class="result-screen-container"></div>
+            <div class= "result-container"></div>
+        </div>
+        <div class="end-screen"></div>
+        
     </main>
-    <script>
-        $(document).ready(function () {
-            var $time = $(".time");
-            var $startQuiz = $(".start");
-            var $questions = $(".questions");
-            var $answers = $(".answers");
-
-            const QUESTIONS = [
-                {
-                    "question": 'WHy is Andreaaa stupid',
-                    answers: ['Because she id stupid', 'she is not stupid', 'because she is ', 'who cares'],
-                    correctAnswer: 'wueiw'
-                },
-
-                {
-                    "question": 'why?',
-                    answers: ['Oakland', 'Patriots', 'Kanas City', 'Da Bears'],
-                    correctAnswer: 'eerreedv'
-                },
-                {
-                    "question": 'who?',
-                    answers: ['Oakland', 'Patriots', 'Kanas City', 'Da Bears'],
-                    correctAnswer: ' City'
-                },
-                {
-                    "question": 'yakke?',
-                    answers: ['Oakland', 'Patriots', 'Kanas City', 'Da Bears'],
-                    correctAnswer: 'Kanas '
-                },
-                {
-                    "question": 'dfdjfkd',
-                    answers: ['Because she id stupid', 'she is not stupid', 'because she is ', 'who cares'],
-                    correctAnswer: 'fdhds City'
-                }
-
-            ];
-            // console.log(QUESTIONS[0]["answers"][0]);
-
-            $startQuiz.on("click", function () {
-
-                
-
-                var questionsLength = QUESTIONS.length;
-                console.log(questionsLength);
-
-                for (var i = 0; i < questionsLength; i++) {
-
-                    var question = (QUESTIONS[i]["question"]);
-                    console.log(question);
-                    $questions.append('<div>'+ question+"</div>");
-                    
-                    var correctAnswer = (QUESTIONS[i].correctAnswer);
-                    // console.log(correctAnswer);
-                    // $answers.append('<input type="checkbox" /> ' + correctAnswer + '<br />');
-
-
-                }
-
-                function shwoAnswer(){
-                    var answersLength = (QUESTIONS[i].answers).length;
-                    for( var j = 0; j < answersLength; j++){
-                        var answers = (QUESTIONS[i].answers[j]);
-                        console.log(answers);
-                        $answers.append('<input type="checkbox" /> ' + answers + '<br />');
-
-                    }
-                    
-
-                }
-
-
-            });
-
-        });
-
-    </script>
+    <footer class="footer" align = "center">
+        <a href="https://www.linkedin.com/in/naryanp" target="_blank" class = "mr-4">
+            <img src="./assets/image/icons8-linkedin-50.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/naryan/" target="_blank" class = "mr-4">
+            <img src="./assets/image/icons8-github-50.png" alt="github">
+        </a>
+        <a href="mailto:aayanpoudel@gmail.com" target="_blank" class="mr-4">
+            <img src="./assets/image/icons8-gmail-50.png" alt="gmail">
+        </a>
+        <h5>Made by Narayan</h5>
+        <p> &copy; 2020 Narayan Poudel</p>
+    </footer>
+    <script src="./assets/javascript/script.js"></script>
+    <script src="./assets/javascript/questions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
